@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ucFirst(str) {
+            return str[0].toUpperCase() + str.slice(1, str.length);;
+        }
+        alert(ucFirst("кирилл"));
+        alert(ucFirst("вася") == "Вася");
+
+        function checkSpam(str) {
+            str = str.toUpperCase();
+            if (str.includes("VIAGRA") == true || str.includes("XXX") == true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        checkSpam('buy ViAgRA now') == true;
+        checkSpam('free xxxxx') == true;
+        checkSpam("innocent rabbit") == false;
+
+        function truncate(str, maxlength) {
+            if (str.length > maxlength) {
+                return str.substr( 0, maxlength - 1 ) + "...";
+            } else {
+                return str;
+            }
+        }
+
+        alert(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20));
+
+        function extractCurrencyValue(str) {
+            let str1 = '';
+            for (let i = 0; i < str.length; i++) {
+                if (Number.isInteger(+str[i])) {
+                    str1 += str[i];
+                }
+            }
+            return str1;
+        }
+
+        alert( extractCurrencyValue('67$120'));
+        alert( extractCurrencyValue('$1209'));
+    </script>
+</body>
+</html>

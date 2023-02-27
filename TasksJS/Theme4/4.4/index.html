@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function makeUser() {
+        return {
+            name: "John",
+            ref: this
+        };
+        }
+
+        let user = makeUser();
+
+        alert( user.ref.name ); // Каким будет результат? Результатом будет error
+
+        let calculator = {
+        // ... ваш код ...
+            read() {
+                this.value1 = prompt("Введите a", 1);
+                this.value2 = prompt("Введите b", 1);
+            },
+            sum() {
+                return this.value1 + this.value2;
+            },
+            mul() {
+                return this.value1 * this.value2;
+            }
+        };
+        let a, b;
+        calculator.read();
+        alert( calculator.sum() );
+        alert( calculator.mul() );
+
+        let ladder = {
+        step: 0,
+        up: function() {
+            this.step++;
+            return this;
+        },
+        down: function() {
+            this.step--;
+            return this;
+        },
+        showStep: function() { // показывает текущую ступеньку
+            alert( this.step );
+            return this;
+        }
+        };
+
+        ladder.up().up().down().showStep().down().showStep();
+    </script>
+</body>
+</html>

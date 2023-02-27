@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fruits = ["Яблоки", "Груша", "Апельсин"];
+
+        // добавляем новое значение в "копию"
+        let shoppingCart = fruits;
+        shoppingCart.push("Банан");
+
+        // что в fruits?
+        alert( fruits.length ); // ? 4
+        
+        let styles = ["Джаз", "Блюз"];
+        styles.push("Рок-н-ролл");
+        styles[Math.floor((styles.length - 1) / 2)] = "Классика";
+        alert(styles);
+        alert(styles.shift());
+        styles.unshift("Рэп", "Регги");
+
+        let arr = ["a", "b"];
+
+        arr.push(function() {
+        alert( this );
+        });
+
+        arr[2](); // ? в массив добавляется функция и потом мы вызываем метод который показывает нам массив
+
+        function sumInput() {
+            let arr = []; sum = 0;
+            while (true) {
+                let value = prompt("Введите элемент массива", 1);
+                if (value === "" || value === null || !isFinite(value)) {
+                    break;
+                }
+                arr.push(+value);
+            }
+            for (let values of arr) {
+                sum += values;
+            }
+            return sum;
+        }
+
+        alert(sumInput());
+
+        function getMaxSubSum(arr) {
+            let maxSum = 0;
+            let sum = 0;
+
+            for (let item of arr) {
+                sum += item;
+                maxSum = Math.max(maxSum, sum);
+                if (sum < 0) {
+                    sum = 0;
+                }
+            }
+            return maxSum;
+        }
+
+        
+    </script>
+</body>
+</html>

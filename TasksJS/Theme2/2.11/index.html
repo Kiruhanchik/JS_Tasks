@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        alert( null || 2 || undefined ); // выведет 2
+        alert( alert(1) || 2 || alert(3) ); // 1 потом 2
+        alert( 1 && null && 2 ); // null 
+        alert( alert(1) && alert(2) ); // 1 потом underfined
+        alert( null || 2 && 3 || 4 ); // 3
+        let age;
+        if (age >= 90 && age <= 90);
+        if (!((age >= 90) && (age <= 90)));
+        if (age < 14 || age > 90);
+        if (-1 || 0) alert( 'first' ); // этот тоже сработает в скобках true
+        if (-1 && 0) alert( 'second' ); // false 
+        if (null || -1 && 1) alert( 'third' ); // этот сработает вывод в скобках true
+        let password;
+        let login = prompt("Введите логин", '');
+        if (login == "Админ") {
+            password = prompt("Введите пароль", '');
+            if (password == "Я главный") {
+                alert("Здравствуйте!");
+            } else if (password == null) {
+                alert("Отменено");
+            }
+            else alert("Неверный пароль");
+        } 
+        if ((login !== "Админ") &&  (login != null)) {
+            alert("Я вас не знаю");
+        } 
+        if (login == null) {
+            alert("Отменено");
+        }
+        
+    </script>
+</body>
+</html>
